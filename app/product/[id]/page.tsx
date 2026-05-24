@@ -1,5 +1,6 @@
 import axios from "axios";
 import { notFound } from "next/navigation";
+import api from "../../services/api";
 
 type Props = {
   params: Promise<{
@@ -9,9 +10,10 @@ type Props = {
 
 async function getProduct(id: string) {
   try {
-    const res = await axios.get(
-      `https://dummyjson.com/products/${id}`
-    );
+    const res = api.get(`/products?/${id}`)
+    // const res = await axios.get(
+    //   `https://dummyjson.com/products/${id}`
+    // );
 
     return res.data;
   } catch (error) {

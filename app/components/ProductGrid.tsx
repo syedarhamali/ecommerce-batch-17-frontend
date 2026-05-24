@@ -4,6 +4,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
 import { Search } from "lucide-react";
+import api from "../services/api";
 
 type Product = {
   id: number;
@@ -24,9 +25,10 @@ export default function ProductGrid() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const res = await axios.get(
-          "https://dummyjson.com/products?limit=40"
-        );
+        const res = api.get('/products?limit=40')
+        // const res = await axios.get(
+        //   "https://dummyjson.com/products?limit=40"
+        // );
 
         setProducts(res.data.products);
         setFilteredProducts(res.data.products);
