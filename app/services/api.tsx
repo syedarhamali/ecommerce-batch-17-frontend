@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://dummyjson.com",
+  baseURL: "https://ecommerce-batch-17-jyvv.vercel.app",
 });
 
 export const getProducts = async () => {
