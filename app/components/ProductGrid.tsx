@@ -30,8 +30,8 @@ export default function ProductGrid() {
         //   "https://dummyjson.com/products?limit=40"
         // );
 
-        setProducts(res.data.products);
-        setFilteredProducts(res.data.products);
+        setProducts(res);
+        setFilteredProducts(res);
       } catch (error) {
         console.log(error);
       } finally {
